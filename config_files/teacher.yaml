@@ -1,0 +1,19 @@
+model_opts:
+  model: TEACHER
+  obs_input_type:  [local_flo,scene_context,local_context,box]
+  obs_length: 16
+  time_to_event: [30,60]
+  apply_class_s: weightTrue
+  normalize_boxes: True
+  generator: True
+  dataset: pie
+net_opts:
+  num_hidden_units: 256
+  global_pooling: avg
+  regularizer_val: 0.0001
+  backbone: c3d
+exp_opts:
+  datasets: [pie]
+  batch_size: [2, 2]
+  epochs: [40, 40]
+  lr: [5.0e-06, 5.0e-06]

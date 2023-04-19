@@ -1,0 +1,18 @@
+model_opts:
+  model: ResNet
+  obs_input_type: [box]
+  apply_class_weights: True
+  normalize_boxes: True
+  generator: True
+  dataset: pie
+net_opts:
+  model_dim: 256
+  n_heads: 8
+  encoder_stack: 4
+  feed_forward_size: 2048
+  dropout_rate: 0.1
+exp_opts:
+  datasets: [pie]
+  batch_size: [2,2]
+  epochs: [80,40]
+  lr: [5.0e-06, 5.0e-07]
